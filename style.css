@@ -35,3 +35,16 @@
 .news {
     border-bottom: 2px solid #000;
 }
+
+@media (max-width: 768px) {
+    .menus {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .menus button {
+        flex-basis: calc(33.33% - 10px);
+        max-width: calc(33.33% - 10px);
+        margin: 5px;
+    }
+}

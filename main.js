@@ -64,7 +64,7 @@ const render = () => {
         } else if (text) {
             return text;
         } else {
-            return '내용없음';
+            return 'No content';
         }
     };
 
