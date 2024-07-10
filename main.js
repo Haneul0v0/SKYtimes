@@ -3,8 +3,7 @@ let newsList = [];
 
 const getLatestNews = async () => {
     // const url = new URL(`https://newsapi.org/v2/top-headlines?country=us&apiKey=${API_KEY}`);
-    const url = new URL(`https://study-website-be-bbb1539aa813.herokuapp.com/top-headlines?country=us`);
-    // const url = new URL(`https://glowing-beijinho-0abcf4.netlify.app/top-headlines?country=us`);
+    const url = new URL(`https://noona-times-be-5ca9402f90d9.herokuapp.com/top-headlines?country=us`);
     console.log("url", url);
 
     try {
