@@ -1,0 +1,211 @@
+/* Reset 기본 스타일 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f0f0f0;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 1rem 0;
+}
+
+.container {
+    width: 70%;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.head-line {
+    margin-top: 1em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.top-menus {
+    display: flex;
+    align-items: center;
+    padding: 0.5rem;
+}
+
+.top-menus i:first-child {
+    margin-right: 20px;
+}
+
+#search-icon {
+    margin-right: 20px;
+}
+
+.top-menus button {
+    display: none;
+    background: none;
+    border: none;
+}
+
+#search-input {
+    display: none;
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-right: 1rem;
+}
+
+#search-button {
+    display: none;
+    padding: 0.5rem 1rem;
+    border: none;
+    background-color: #ccc;
+    color: #757575;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#search-button:hover {
+    background-color: #757575;
+    color: #ccc;
+}
+
+.menus {
+    display: none;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 1rem;
+}
+
+.menus.show {
+    display: block;
+}
+
+#search-input.show {
+    display: inline-block;
+}
+
+#search-button.show {
+    display: inline-block;
+}
+
+.menus button {
+    color: #fff;
+    border: none;
+    background: none;
+    margin: 0 1rem;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    border-bottom: 2px solid transparent;
+}
+
+.menus button:hover {
+    border-bottom: 2px solid #fff;
+}
+
+.news {
+    display: flex;
+    justify-content: center;
+}
+
+.news-img-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 0 0 auto;
+}
+
+.news-img {
+    max-width: 100%;
+    max-height: 150px;
+}
+
+.article-card {
+    background-color: #fff;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border: 1px solid #ddd;
+    display: flex;
+    align-items: center;
+}
+
+.article-card > div {
+    flex: 1;
+}
+
+.article-card h3 {
+    margin-bottom: 0.5rem;
+}
+
+.article-card p {
+    margin-bottom: 1rem;
+}
+
+.article-card .read-more {
+    display: inline-block;
+    background-color: #333;
+    color: #fff;
+    padding: 0.5rem 1rem;
+    text-decoration: none;
+}
+
+.article-card .read-more:hover {
+    background-color: #555;
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 1rem 0;
+    margin-top: 2rem;
+}
+
+/* 휴대폰에 대한 스타일 */
+@media screen and (max-width: 480px) {
+    .menus {
+        display: none;
+    }
+
+    .top-menus button {
+        display: inline-block;
+        color: #fff;
+        border: none;
+        background: none;
+        cursor: pointer;
+        margin-right: 0.5rem;
+    }
+
+    
+}
+
+/* 태블릿에 대한 스타일 */
+@media screen and (min-width: 481px) and (max-width: 1024px) {
+    .menus {
+        display: none;
+    }
+
+    .top-menus button {
+        display: inline-block;
+        color: #fff;
+        border: none;
+        background: none;
+        cursor: pointer;
+        margin-right: 0.5rem;
+    }
+
+}
+
+/* 데스크톱에 대한 스타일 */
+@media screen and (min-width: 1025px) {
+    #menu-icon {
+        display: none;
+    }
+
+    .menus {
+        display: flex;
+    }
+}
