@@ -106,7 +106,10 @@ const render = () => {
                         <div class="article-content col-12 col-lg-8">
                             <h3>${news.title}</h3>
                             <p>
-                                ${truncateText(news.description,200)}
+                                ${truncateText(
+                news.description,
+                200
+            )}
                             </p>
                             <div>
                                 ${sourceName} * ${timeAgo}
