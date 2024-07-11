@@ -1,3 +1,4 @@
+/* Reset 기본 스타일 */
 * {
     margin: 0;
     padding: 0;
@@ -35,11 +36,11 @@ header {
 }
 
 .top-menus i:first-child {
-    margin-right: 20px;
+    margin-right: 20px; /* 원하는 간격으로 조정 */
 }
 
 #search-icon {
-    margin-right: 20px;
+    margin-right: 20px; /* 원하는 간격으로 조정 */
 }
 
 .top-menus button {
@@ -163,6 +164,8 @@ footer {
     margin-top: 2rem;
 }
 
+
+/* 휴대폰에 대한 스타일 */
 @media screen and (max-width: 480px) {
     .menus {
         display: none;
@@ -179,6 +182,7 @@ footer {
 
 }
 
+/* 태블릿에 대한 스타일 */
 @media screen and (min-width: 481px) and (max-width: 1024px) {
     .menus {
         display: none;
@@ -195,6 +199,7 @@ footer {
 
 }
 
+/* 데스크톱에 대한 스타일 */
 @media screen and (min-width: 1025px) {
     #menu-icon {
         display: none;
