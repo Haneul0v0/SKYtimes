@@ -99,23 +99,30 @@ const render = () => {
                 : 'no source';
             const timeAgo = formatTimeAgo(news.publishedAt);
 
-            return `<div class="row news">
-            <div class="col-lg-4">
-                <img class="news-img-size" src="${imageSrc}" onerror="this.onerror=null;this.src='./images/image-not-available.jpg';">
-            </div>
-            <div class="col-lg-8">
-                <h2>${news.title}</h2>
-                <p>
-                    ${truncateText(
+            return `
+            <div class="container">
+                <div class="row news">
+                    <div class="article-card d-flex flex-column flex-lg-row">
+                        <div class="news-img-container col-12 col-lg-4">
+                            <img
+                                class="news-img"
+                                src="${imageSrc}"
+                                onerror="this.onerror=null; this.src='./images/image-not-available.jpg';"></div>
+                            <div class="article-content col-12 col-lg-8">
+                                <h3>${news.title}</h3>
+                                <p>
+                                    ${truncateText(
                 news.description,
                 200
             )}
-                </p>
-                <div>
-                    ${sourceName} * ${timeAgo}
-                </div>
-            </div>
-        </div>`;
+                                </p>
+                                <div>
+                                    ${sourceName} * ${timeAgo}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>`;
         })
         .join('');
 
