@@ -91,9 +91,6 @@ const render = () => {
 
     const newsHTML = newsList
         .map(news => {
-            const imageSrc = news.urlToImage
-                ? news.urlToImage
-                : './images/image-not-available.jpg';
             const sourceName = news.source && news.source.name
                 ? news.source.name
                 : 'no source';
@@ -104,25 +101,20 @@ const render = () => {
                 <div class="row news">
                     <div class="article-card d-flex flex-column flex-lg-row">
                         <div class="news-img-container col-12 col-lg-4">
-                            <img
-                                class="news-img"
-                                src="${imageSrc}"
-                                onerror="this.onerror=null; this.src='./images/image-not-available.jpg';"></div>
-                            <div class="article-content col-12 col-lg-8">
-                                <h3>${news.title}</h3>
-                                <p>
-                                    ${truncateText(
-                news.description,
-                200
-            )}
-                                </p>
-                                <div>
-                                    ${sourceName} * ${timeAgo}
-                                </div>
+                            <img src="${news.urlToImage || './images/image-not-available.png'}" onerror="this.onerror=null; this.src='./images/image-not-available.png';">
+                        </div>
+                        <div class="article-content col-12 col-lg-8">
+                            <h3>${news.title}</h3>
+                            <p>
+                                ${truncateText(news.description,200)}
+                            </p>
+                            <div>
+                                ${sourceName} * ${timeAgo}
                             </div>
                         </div>
                     </div>
-                </div>`;
+                </div>
+            </div>`;
         })
         .join('');
 
