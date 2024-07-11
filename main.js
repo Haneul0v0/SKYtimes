@@ -1,15 +1,12 @@
 const API_KEY = `0c12040e60d948238f7f4c43e1b7b55f`;
 let newsList = [];
-<<<<<<< HEAD
+
 // let url = new URL(
 // `https://newsapi.org/v2/top-headlines?country=us&apiKey=${API_KEY}` )
 let url = new URL(
     `https://noona-times-be-5ca9402f90d9.herokuapp.com/top-headlines?country=us`
-=======
-let url = new URL(
-    `https://newsapi.org/v2/top-headlines?country=us&apiKey=${API_KEY}`
->>>>>>> 06c61a844926d82bc84097ede5e5722f5bc225c0
-)
+);
+
 const menus = document.querySelectorAll(".menus button");
 menus.forEach(
     menu => menu.addEventListener("click", (event) => getNewsByCategory(event))
@@ -20,13 +17,10 @@ const getNews = async () => {
         const response = await fetch(url);
         const data = await response.json();
         if (response.status === 200) {
-<<<<<<< HEAD
+
             if (data.articles.length === 0) {
                 throw new Error("No result for this search");
-=======
-            if(data.articles.length===0){
-                throw new Error ("No result for this search");
->>>>>>> 06c61a844926d82bc84097ede5e5722f5bc225c0
+
             }
             newsList = data.articles;
             render();
@@ -39,15 +33,11 @@ const getNews = async () => {
 }
 
 const getLatestNews = async () => {
-<<<<<<< HEAD
     // url = new URL(
     // `https://newsapi.org/v2/top-headlines?country=us&apiKey=${API_KEY}` );
     url = new URL(
         `https://noona-times-be-5ca9402f90d9.herokuapp.com/top-headlines?country=us`
-=======
-    url = new URL(
-        `https://newsapi.org/v2/top-headlines?country=us&apiKey=${API_KEY}`
->>>>>>> 06c61a844926d82bc84097ede5e5722f5bc225c0
+
     );
 
     getNews();
@@ -58,18 +48,13 @@ const getNewsByCategory = async (event) => {
         .target
         .textContent
         .toLowerCase();
-<<<<<<< HEAD
+
     // url = new URL(
     // `https://newsapi.org/v2/top-headlines?country=us&category=${category}&apiKey=${API_KEY}`
     // );
     url = new URL(
         `https://noona-times-be-5ca9402f90d9.herokuapp.com/top-headlines?country=us&category=${category}`
-=======
-    url = new URL(
-        `https://newsapi.org/v2/top-headlines?country=us&category=${category}&apiKey=${API_KEY}`
->>>>>>> 06c61a844926d82bc84097ede5e5722f5bc225c0
     );
-
     getNews();
 }
 
@@ -77,16 +62,13 @@ const getNewsByKeyword = async () => {
     const keyword = document
         .getElementById("search-input")
         .value;
-<<<<<<< HEAD
+
     // url = new URL(
     // `https://newsapi.org/v2/top-headlines?country=us&q=${keyword}&apiKey=${API_KEY}`
     // )
     url = new URL(
         `https://noona-times-be-5ca9402f90d9.herokuapp.com/top-headlines?country=us&q=${keyword}`
-=======
-    url = new URL(
-        `https://newsapi.org/v2/top-headlines?country=us&q=${keyword}&apiKey=${API_KEY}`
->>>>>>> 06c61a844926d82bc84097ede5e5722f5bc225c0
+
     )
 
     getNews();
@@ -117,31 +99,6 @@ const render = () => {
                 : 'no source';
             const timeAgo = formatTimeAgo(news.publishedAt);
 
-<<<<<<< HEAD
-            return `<div class="container">
-                <div class="row news">
-                    <div class="article-card d-flex flex-column flex-lg-row">
-                        <div class="news-img-container col-12 col-lg-4">
-                            <img
-                                class="news-img"
-                                src="${imageSrc}"
-                                onerror="this.onerror=null; this.src='./images/image-not-available.jpg';"></div>
-                            <div class="article-content col-12 col-lg-8">
-                                <h3>${news.title}</h3>
-                                <p>
-                                    ${truncateText(
-                news.description,
-                200
-            )}
-                                </p>
-                                <div>
-                                    ${sourceName} * ${timeAgo}
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>`;
-=======
             return `<div class="row news">
             <div class="col-lg-4">
                 <img class="news-img-size" src="${imageSrc}" onerror="this.onerror=null;this.src='./images/image-not-available.jpg';">
@@ -159,7 +116,6 @@ const render = () => {
                 </div>
             </div>
         </div>`;
->>>>>>> 06c61a844926d82bc84097ede5e5722f5bc225c0
         })
         .join('');
 
@@ -179,7 +135,6 @@ const errorRender = (errorMessage) => {
 }
 
 document.addEventListener("DOMContentLoaded", getLatestNews);
-<<<<<<< HEAD
 
 document.addEventListener('DOMContentLoaded', function () {
     let menuIcon = document.getElementById('menu-icon');
@@ -206,5 +161,3 @@ document.addEventListener('DOMContentLoaded', function () {
             .toggle('show');
     });
 });
-=======
->>>>>>> 06c61a844926d82bc84097ede5e5722f5bc225c0
