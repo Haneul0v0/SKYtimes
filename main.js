@@ -101,7 +101,7 @@ const render = () => {
                 <div class="row news">
                     <div class="article-card d-flex flex-column flex-lg-row">
                         <div class="news-img-container col-12 col-lg-4">
-                            <img src="${news.urlToImage || './images/image-not-available.png'}" onerror="this.onerror=null; this.src='./images/image-not-available.png';">
+                            <img class="news-img" src="${news.urlToImage || './images/image-not-available.png'}" onerror="this.onerror=null; this.src='./images/image-not-available.png';">
                         </div>
                         <div class="article-content col-12 col-lg-8">
                             <h3>${news.title}</h3>
