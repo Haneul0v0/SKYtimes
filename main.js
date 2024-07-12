@@ -1,4 +1,3 @@
-const API_KEY = `0c12040e60d948238f7f4c43e1b7b55f`;
 let newsList = [];
 
 let baseUrl = `https://noona-times-be-5ca9402f90d9.herokuapp.com/top-headlines?country=kr`
