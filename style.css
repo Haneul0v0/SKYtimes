@@ -29,21 +29,21 @@ header {
     justify-content: center;
 }
 
-.top-menus {
+.simple-menus {
     display: flex;
     align-items: center;
     padding: 0.5rem;
 }
 
-.top-menus i:first-child {
-    margin-right: 20px; /* 원하는 간격으로 조정 */
+.simple-menus i:first-child {
+    margin-right: 20px;
 }
 
 #search-icon {
-    margin-right: 20px; /* 원하는 간격으로 조정 */
+    margin-right: 20px;
 }
 
-.top-menus button {
+.simple-menus button {
     display: none;
     background: none;
     border: none;
@@ -171,7 +171,7 @@ footer {
         display: none;
     }
 
-    .top-menus button {
+    .simple-menus button {
         display: inline-block;
         color: #fff;
         border: none;
@@ -188,7 +188,7 @@ footer {
         display: none;
     }
 
-    .top-menus button {
+    .simple-menus button {
         display: inline-block;
         color: #fff;
         border: none;

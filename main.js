@@ -16,12 +16,12 @@ const getNews = async () => {
     try {
         const response = await fetch(url);
         const data = await response.json();
-        if (response.status === 200) {
 
+        if (response.status === 200) {
             if (data.articles.length === 0) {
                 throw new Error("No result for this search");
-
             }
+
             newsList = data.articles;
             render();
         } else {
@@ -40,7 +40,7 @@ const getLatestNews = async () => {
 
     );
 
-    getNews();
+    await getNews();
 }
 
 const getNewsByCategory = async (event) => {
@@ -55,7 +55,7 @@ const getNewsByCategory = async (event) => {
     url = new URL(
         `https://noona-times-be-5ca9402f90d9.herokuapp.com/top-headlines?country=us&category=${category}`
     );
-    getNews();
+    await getNews();
 }
 
 const getNewsByKeyword = async () => {
@@ -71,7 +71,7 @@ const getNewsByKeyword = async () => {
 
     )
 
-    getNews();
+    await getNews();
 }
 
 const render = () => {
@@ -161,5 +161,11 @@ document.addEventListener('DOMContentLoaded', function () {
         searchButton
             .classList
             .toggle('show');
+    });
+
+    searchInput.addEventListener("keypress", (event) => {
+        if (event.key === "Enter") {
+            getNewsByKeyword();
+        }
     });
 });
